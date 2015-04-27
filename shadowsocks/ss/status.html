@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Go!</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <h2>This website was powered by Golang!
+        <small>@author <a><em>ElvizLai</em></a></small>
+    </h2>
+    <div class="list-group col-lg-7">
+        {{range .Result}}
+        <div class="content popup" data-content="UpdateTime: {{.UpdateTime}}"><b style="float:left;padding-right:4px;min-width:40px;">{{.Id}}</b>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: {{.P}}%">
+                </div>
+                <span style="padding-left:4px;color:#3780c3">{{.Use}}G</span>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(
+            function() {
+                $('.content.popup').popup();
+            }
+    )
+</script>
+</body>
+</html>
